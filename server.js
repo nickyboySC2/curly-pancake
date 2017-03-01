@@ -6,7 +6,12 @@ app.use(express.static('client'));
 
 app.get('/*', function (req, res) {
 	var responseObj = {"ipaddress":null,"language":null,"software":null};
-	var ip = req.connection.remoteAddress;
+	console.log(req.headers);
+	var ip = req.headers['x-forwarded-for'] || 
+    req.connection.remoteAddress || 
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress||
+    "N/A";
 	var language = req.get('accept-language');
 	var software = req.get('user-agent');
 	responseObj["ipaddress"]=ip;

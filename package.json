@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nickyboySC2/curly-pancake/issues"
   },
-  "homepage": "https://github.com/nickyboySC2/curly-pancake#readme"
+  "homepage": "https://github.com/nickyboySC2/curly-pancake#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
